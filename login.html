@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+    <main>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="register.html">Register here</a>.</p>
+    </main>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Check credentials from "User Credentials" file (simulated here)
+            console.log(`Checking credentials for: ${username}, ${password}`);
+            const isValid = true; // Simulate validation
+            if (isValid) {
+                alert('Login successful!');
+                window.location.href = 'index.html';
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
